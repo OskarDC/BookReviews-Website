@@ -1,7 +1,30 @@
 <%- include("partials/header.ejs") %>
 
 <main>
-    <h1>All Reviews</h1>
+    <h2 class="bold-text">All Reviews</h2>
+    <section id="allReviews">
+        <% reviews.forEach(review => { %>
+        <article class="single-review">
+            <div class="review-header">
+                <h3 class="review-title bold-text"><%= review.title %> by <%= review.author %></h3>
+                <p class="review-rating bold-text"><%= review.rating %>/5</p>
+            </div>
+            <div class="review-body">
+                <img src="<%= review.book_cover %>" alt="<%= review.title %> by <%= review.author %>" class="review-cover">
+                <p class="review-text"><%= review.text %></p>
+            </div>
+            <div class="review-footer">
+                <div class="review-dates">
+                    <p class="review-read-date bold-text">Book read at: <%= review.read_date.toISOString().split('T')[0] %></p>
+                    <p class="review-created-at bold-text">Review created at: <%= review.created_at.toISOString().split('T')[0] %></p>
+                </div>
+                <a href="/edit/<%= review.id %>" class="review-edit">✎</a>
+            </div>
+
+        </article>
+        <% }) %>
+    </section>
+
 </main>
 
 <%- include("partials/footer.ejs") %>

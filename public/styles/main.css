@@ -16,13 +16,23 @@ header, footer {
     background-color: black;
     color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
-header h1 {
+header > h1 {
     line-height: 3rem;
     font-size: 2.5rem;
+}
+
+header > nav > ul {
+    display: flex;
+    gap: 1rem;
+}
+
+header > nav > ul > li > a {
+    color: white;
+    text-decoration: none;
 }
 
 main {
@@ -32,12 +42,96 @@ main {
     color: black;
 }
 
-main h2{
+main > h2 {
     line-height: 2.5rem;
     font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2vh 0;
 }
 
-main h3 {
+main > #allReviews, main > #editReview, main > #newReview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main > #allReviews > .single-review {
+    width: 50vw;
+    border: 0.5rem solid black;
+    border-radius: 1rem;
+    padding: 1vh 1vw;
+    margin: 0 0 2vh 0;
+}
+
+main > #allReviews > .single-review > .review-header {
+    min-height: 4vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main > #allReviews > .single-review > .review-header > h3 {
     line-height: 2rem;
     font-size: 1.5rem;
+}
+
+main > #allReviews > .single-review > .review-header > .review-rating {
+    text-decoration: underline;
+}
+
+main > #allReviews > .single-review > .review-body {
+    min-height: 3vh;
+    overflow: hidden;
+}
+
+main > #allReviews > .single-review > .review-body > .review-cover {
+    height: 15vh;
+    float: left;
+    margin: 0 1vw 1vh 0;
+}
+
+main > #allReviews > .single-review > .review-body > p{
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+main > #allReviews > .single-review > .review-footer {
+    min-height: 2.6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+main > #allReviews > .single-review > .review-footer > .review-dates {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+main > #allReviews > .single-review > .review-footer > a{
+    text-decoration: none;
+    color: black;
+}
+
+main > #allReviews > .single-review > .review-footer > .review-dates > p {
+    line-height: 1.3rem;
+    font-size: 0.8rem;
+}
+
+main > #editReview > form, main > #newReview > form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+main > #editReview > form > .form-group, main > #newReview > form > .form-group {
+    display: flex;
+    flex-direction: row;    
+    gap: 1rem;
+}
+
+footer {
+    justify-content: center;
 }
