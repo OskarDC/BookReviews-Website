@@ -1,10 +1,10 @@
 /* DOCUMENT STYLES */
 html {
-    font-family: "helvetica neue", sans-serif;
+    font-family: "Helvetica Neue", sans-serif;
     scroll-behavior: smooth;
 }
 
-/* CLASSES */
+/* GLOBAL CLASSES */
 .bold-text {
     font-weight: bold;
 }
@@ -13,7 +13,7 @@ html {
 header, footer {
     min-height: 6vh;
     padding: 2vh 2vw;
-    background-color: black;
+    background-color: #00B8A9;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -38,17 +38,59 @@ header > nav > ul > li > a {
 main {
     min-height: 76vh;
     padding: 2vh 2vw;
-    background-color: white;
-    color: black;
+    background-color: #F6416C;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center
 }
 
 main > h2 {
     line-height: 2.5rem;
     font-size: 2rem;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin: 0 0 2vh 0;
 }
+
+main > #orderOptions {
+    margin: 0 0 2vh 0;
+}
+
+main > #orderOptions > form {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+}
+
+main > #orderOptions > form > label {
+    line-height: 2rem;
+    font-size: 1.5rem;
+    margin-right: 1vw;
+}
+
+main > #orderOptions > form > #orderButtons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1vw;
+    flex-grow: 1;
+}
+
+main > #orderOptions > form > #orderButtons > button {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding: 0.5vw 0.5vh;
+    border: 0.1rem solid #FFD460;
+    color: white;
+    background-color: transparent;
+    border-radius: 0.5rem;
+    flex: 1;
+}
+
+main > #orderOptions > form > #orderButtons > .selected {
+    background-color: #FFD460;
+    color: white;
+}
+
 
 main > #allReviews, main > #editReview, main > #newReview {
     display: flex;
@@ -58,8 +100,9 @@ main > #allReviews, main > #editReview, main > #newReview {
 
 main > #allReviews > .single-review {
     width: 50vw;
-    border: 0.5rem solid black;
+    border: 0.5rem solid #FFD460;
     border-radius: 1rem;
+    background-color: #FFD460;
     padding: 1vh 1vw;
     margin: 0 0 2vh 0;
 }
@@ -69,6 +112,7 @@ main > #allReviews > .single-review > .review-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 0 2vh 0;
 }
 
 main > #allReviews > .single-review > .review-header > h3 {
@@ -86,7 +130,8 @@ main > #allReviews > .single-review > .review-body {
 }
 
 main > #allReviews > .single-review > .review-body > .review-cover {
-    height: 15vh;
+    border: 0.5rem solid white;
+    width: 10vw;
     float: left;
     margin: 0 1vw 1vh 0;
 }
@@ -102,17 +147,17 @@ main > #allReviews > .single-review > .review-footer {
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
+    margin: 2vh 0 0 0;
 }
 
 main > #allReviews > .single-review > .review-footer > .review-dates {
     display: flex;
-    flex-direction: row;
     gap: 0.8rem;
 }
 
 main > #allReviews > .single-review > .review-footer > a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 main > #allReviews > .single-review > .review-footer > .review-dates > p {
@@ -123,13 +168,57 @@ main > #allReviews > .single-review > .review-footer > .review-dates > p {
 main > #editReview > form, main > #newReview > form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1rem;
+    margin: 0 0 2vh 0;
 }
 
 main > #editReview > form > .form-group, main > #newReview > form > .form-group {
     display: flex;
     flex-direction: row;    
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vw;
+}
+
+main > #editReview > form > .form-group > label, main > #newReview > form > .form-group > label {
+    width: 7vw;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
+
+main > #editReview > form > .form-group > input ,
+main > #editReview > form > .form-group >  textarea,
+main > #newReview > form > .form-group > input,
+main > #newReview > form > .form-group > textarea {
+    min-width: 20vw;
+    max-width: 20vw;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 0.1rem solid #FFD460;
+    color: white;
+    background-color: transparent;
+    border-radius: 0.5rem;
+}
+
+main > #editReview > form > .form-group > input::placeholder,
+main > #editReview > form > .form-group > textarea::placeholder,
+main > #newReview > form > .form-group > input::placeholder,
+main > #newReview > form > .form-group > textarea::placeholder {
+    color: white;
+}
+
+main > #newReview > form > button,
+main > #editReview > form > button {
+    width: 30vw;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 0.1rem solid #FFD460;
+    color: white;
+    background-color: transparent;
+    border-radius: 0.5rem;
 }
 
 footer {

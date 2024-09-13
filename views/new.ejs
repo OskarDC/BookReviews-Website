@@ -6,23 +6,23 @@
         <form action="/add" method="post">
             <div class="form-group">
                 <label for="title" class="bold-text">Title:</label>
-                <input type="text" id="title" name="title" required>    
+                <input type="text" id="title" name="title" required placeholder="Enter book title">    
             </div>
             <div class="form-group">
                 <label for="author" class="bold-text">Author:</label>
-                <input type="text" id="author" name="author" required>    
+                <input type="text" id="author" name="author" required placeholder="Enter author's name">
             </div>
             <div class="form-group">
                 <label for="isbn" class="bold-text">ISBN:</label>
-                <input type="text" id="isbn" name="isbn">
+                <input type="text" id="isbn" name="isbn" minlength="10" maxlength="13" placeholder="Enter ISBN">
             </div>
             <div class="form-group">
                 <label for="rating" class="bold-text">Rating:</label>
-                <input type="number" id="rating" name="rating" required>
+                <input type="number" id="rating" name="rating" min="0" max="5" required placeholder="Rating from 0 to 5">
             </div>
             <div class="form-group">
                 <label for="text" class="bold-text">Review:</label>
-                <textarea id="text" name="text" required></textarea>
+                <textarea id="text" name="text" minlength="50" maxlength="700" required placeholder="Write your review here"></textarea>
             </div>
             <div class="form-group">
                 <label for="read_date" class="bold-text">Read Date:</label>

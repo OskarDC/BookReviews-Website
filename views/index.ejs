@@ -2,7 +2,21 @@
 
 <main>
     <h2 class="bold-text">All Reviews</h2>
+    <section id="orderOptions">
+        <form action="/" method="get">
+            <label for="order" class="bold-text">Order by:</label>
+            <div id="orderButtons">
+                <button type="submit" name="order" value="created_at" class="order-option <%= orderType === 'created_at' ? 'selected' : '' %>" >Created at</button>
+                <button type="submit" name="order" value="read_date" class="order-option <%= orderType === 'read_date' ? 'selected' : '' %>">Read date</button>
+                <button type="submit" name="order" value="title" class="order-option <%= orderType === 'title' ? 'selected' : '' %>">Title</button>
+                <button type="submit" name="order" value="rating" class="order-option <%= orderType === 'rating' ? 'selected' : '' %>">Rating</button>
+            </div>
+        </form>
+    </section>
     <section id="allReviews">
+        <% if (reviews.length === 0) { %>
+            <h3>There are no reviews to show.</h3>
+        <% } else { %>
         <% reviews.forEach(review => { %>
         <article class="single-review">
             <div class="review-header">
@@ -15,14 +29,15 @@
             </div>
             <div class="review-footer">
                 <div class="review-dates">
-                    <p class="review-read-date bold-text">Book read at: <%= review.read_date.toISOString().split('T')[0] %></p>
-                    <p class="review-created-at bold-text">Review created at: <%= review.created_at.toISOString().split('T')[0] %></p>
+                    <p class="review-read-date bold-text">Book read at: <%= review.read_date.toLocaleDateString() %></p>
+                    <p class="review-created-at bold-text">Review created at: <%= review.created_at.toLocaleDateString() %></p>
                 </div>
-                <a href="/edit/<%= review.id %>" class="review-edit">✎</a>
+                <a href="/edit/<%= review.id %>" class="review-edit" aria-label="Edit review for <%= review.title %>">✎</a>
             </div>
 
         </article>
         <% }) %>
+        <% } %>
     </section>
 
 </main>

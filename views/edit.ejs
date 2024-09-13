@@ -6,33 +6,33 @@
         <form action="/update/<%= review.id %>" method="post">
             <div class="form-group">
                 <label for="title" class="bold-text">Title:</label>
-                <input type="text" id="title" name="title" value="<%= review.title %>" required>    
+                <input type="text" id="title" name="title" value="<%= review.title %>" required placeholder="Enter book title">    
             </div>
             <div class="form-group">
                 <label for="author" class="bold-text">Author:</label>
-                <input type="text" id="author" name="author" value="<%= review.author %>" required>    
+                <input type="text" id="author" name="author" value="<%= review.author %>" required placeholder="Enter author's name">    
             </div>
             <div class="form-group">
                 <label for="isbn" class="bold-text">ISBN:</label>
-                <input type="text" id="isbn" name="isbn">    
+                <input type="text" id="isbn" name="isbn" value="<%= review.isbn %>" placeholder="Enter ISBN">    
             </div>
             <div class="form-group">
                 <label for="rating" class="bold-text">Rating:</label>
-                <input type="number" id="rating" name="rating" value="<%= review.rating %>" required>
+                <input type="number" id="rating" name="rating" value="<%= review.rating %>" min="0" max="5" required placeholder="Rating from 0 to 5">
             </div>
             <div class="form-group">
                 <label for="text" class="bold-text">Review:</label>
-                <textarea id="text" name="text" required><%= review.text %></textarea>
+                <textarea id="text" name="text" required placeholder="Write your review here"><%= review.text %></textarea>
             </div>
             <div class="form-group">
                 <label for="read_date" class="bold-text">Read Date:</label>
-                <input type="date" id="read_date" name="read_date" value="<%= review.read_date.toISOString().split('T')[0] %>" required>
+                <input type="date" id="read_date" name="read_date" value="<%= review.read_date.toLocaleDateString() %>" required>
             </div>
             <button type="submit" class="bold-text">Edit Review</button>
         </form>
-        <form action="/delete/<%= review.id %>" method="post" onsubmit="return confirm('Are you sure you want to delete this review?');">
+        <form action="/delete/<%= review.id %>" method="post" onsubmit="return confirm('Are you sure you want to permanently delete this review? This action cannot be undone.');">
             <input type="hidden" name="_method" value="DELETE">
-            <button type="submit" class="bold-text delete-button">Delete Review</button>
+            <button type="submit" class="bold-text delete-button" aria-label="Delete review for <%= review.title %>">Delete Review</button>
         </form>
     </section>
 </main>
