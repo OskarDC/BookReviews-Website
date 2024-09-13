@@ -1,0 +1,43 @@
+/* DOCUMENT STYLES */
+html {
+    font-family: "helvetica neue", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* CLASSES */
+.bold-text {
+    font-weight: bold;
+}
+
+/* SECTIONS */
+header, footer {
+    min-height: 6vh;
+    padding: 2vh 2vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    line-height: 3rem;
+    font-size: 2.5rem;
+}
+
+main {
+    min-height: 76vh;
+    padding: 2vh 2vw;
+    background-color: white;
+    color: black;
+}
+
+main h2{
+    line-height: 2.5rem;
+    font-size: 2rem;
+}
+
+main h3 {
+    line-height: 2rem;
+    font-size: 1.5rem;
+}
